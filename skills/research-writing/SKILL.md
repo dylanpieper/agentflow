@@ -1,6 +1,6 @@
 ---
 name: research-writing
-description: APA 7, open-science, and figure rules for research writing. Use when writing or editing a manuscript, report, brief, memo, or results section, when reporting statistical results, or when making figures for them.
+description: APA 7 and open-science rules for research writing. Use when writing or editing a manuscript, report, brief, memo, or results section, or when reporting statistical results.
 ---
 
 # Research writing
@@ -17,6 +17,7 @@ description: APA 7, open-science, and figure rules for research writing. Use whe
 
 ## Open science
 
+- Report the sample size for each group (N = X).
 - Report effect sizes, confidence intervals, and exact p-values.
 - Round coefficients and test statistics to two decimal places.
 - Round p-values to three decimal places.
@@ -25,12 +26,6 @@ description: APA 7, open-science, and figure rules for research writing. Use whe
 - Keep confirmatory analyses separate from exploratory analyses.
 - Report all analytic decisions clearly.
 - Report null and unexpected results honestly.
-- Use bootstrapping and simulation when they are applicable.
-- Use power analyses or sensitivity analyses when they are applicable.
-
-## Figures
-
-- Show the raw data when you can. Put the summary on top of the data points. Do not show a summary alone.
-- Do not use a bar chart with error bars for continuous data.
-- Select the form by sample size. For a small sample, show each data point. For a large sample, show the shape of the distribution and add the data points when they stay readable.
-- Give the sample size for each group.
+- Use bootstrapping and simulation when applicable.
+- Use power analyses or sensitivity analyses when applicable.
+- Correct for multiple testing and comparisons when applicable.
