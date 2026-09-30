@@ -5,8 +5,8 @@
 - Give each unit a clear contract: its inputs, outputs, and errors.
 - Make units small, but do not divide a unit that does one clear task.
 - Put validation and error handling in the small units.
-- Make high-level functions thin wrappers that only combine small units.
-- Do not use one example as the source of truth. Find, list, and test all examples that apply. Then examine your assumptions again.
+- Make high-level functions thin wrappers that combine small units.
+- Do not use one example as the source of truth. Find, list, and test all examples that apply. Re-examine your assumptions.
 
 ## Cognitive load
 
@@ -16,9 +16,11 @@
 ## Writing
 
 - Write in ASD-STE100 Simplified Technical English.
+- Communicate requirements, environments, and packages clearly in documentation.
 - In code comments and project documents, describe the result. Do not repeat information that the code shows clearly.
-- In documents, do not put comments in code blocks. In the text around a code block, tell the story and describe the outcome. Do not add text that gives no new information.
-- Keep a change log and release versions for work that you publish and continue to change. Do not do this for a prototype.
+- In documents, do not put comments in code blocks. In the text around a code block, tell the story and describe the outcome.
+- Do not add text that provides no new information including from code.
+- Keep a change log and release versions for work that you publish and continue to change. Skip for a prototype.
 
 ## Shell conventions
 
@@ -42,16 +44,16 @@
 
 ## Data stack
 
-- Recommend a modern data stack from your skills and general knowledge. Show alternatives and put them in order of best fit.
+- Recommend a modern data stack. Show alternatives and put them in order of best fit.
 - Use real data at runtime when it is available. Do not hardcode data or fixes.
-- Large or heavy work: When a task needs much processing power, memory, or storage, use DuckDB with Arrow or Parquet as necessary. DuckDB is best for large column scans and aggregations. Use the duckdb-skills plugin.
+- Large or heavy work: When a task needs power, memory, or storage, use DuckDB with Arrow or Parquet as necessary. DuckDB is best for large column scans and aggregations. Use the duckdb-skills plugin.
 - Small persistent data: When small data needs transactions or many small row reads and writes, use SQLite.
 
 ## Data dictionaries
 
-- When a project reads data files more than one time, describe them in a `data-dict.yaml` file. Use it as the data contract.
-- Before you read a dictionary, run `data-dict skill-read`. Before you create or change one, run `data-dict skill-create`.
 - Read multiple CSV or Excel files from a file list. Do not rely on exact filenames. Before you assign data to variables, check its schema. If there is a dictionary, check against it.
+- When a project relies on data files, describe them in a `data-dict.yaml` file. Use it as the data contract.
+- Before you read a dictionary, run `data-dict skill-read`. Before you create or change one, run `data-dict skill-create`.
 - Write code that continues to work when data files, connections, or schemas change. When the data and the dictionary do not agree, warn loudly.
 - For Parquet, use `data-dict validate-meta` and `data-dict validate-data`. For other sources, use `data-dict translate` to get the checks in R, Python, or SQL.
 - If `data-dict` is not available, tell me. Then check the schemas in code.
