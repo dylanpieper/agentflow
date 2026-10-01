@@ -8,13 +8,15 @@ paths:
 
 # Python and web stack
 
+A project `CLAUDE.md` or `AGENTS.md` overrides this file.
+
 ## Python
 
 - Use `uv` for Python versions, environments, dependencies, and scripts (`uv add`, `uv run`). Do not use `pip`, `poetry`, or `conda`.
 
 ## Web app stack
 
-When you build a web app with an API and a UI, use this stack. For the app database, it overrides the data stack in the global `~/.claude/CLAUDE.md`. For analytical or file-based work, also inside the app, use that data stack. A project `CLAUDE.md` or `AGENTS.md` overrides this rule.
+When you build a web app with an API and a UI, use this stack. For the app database, it overrides the data stack in the global `~/.claude/CLAUDE.md`. For analytical or file-based work, including work inside the app, use that data stack.
 
 - Use FastAPI for the API and Pydantic for request and response schemas.
 - Use PostgreSQL for the database. Use SQLAlchemy 2.0 with typed `select()` queries, and Alembic for migrations.
