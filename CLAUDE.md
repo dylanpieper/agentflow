@@ -58,6 +58,13 @@
 - For Parquet, use `data-dict validate-meta` and `data-dict validate-data`. For other sources, use `data-dict translate` to get the checks in R, Python, or SQL.
 - If `data-dict` is not available, tell me. Then check the schemas in code.
 
+## Libraries and tools
+
+- Before you use a package, library, or tool, read its current documentation and its change log (`NEWS.md`, `CHANGELOG.md`, or the release notes). Do not rely on memory for functions, arguments, or defaults.
+- Find the version that the project uses (`renv.lock`, `uv.lock`, `package-lock.json`, or `DESCRIPTION`). Read the documentation for that version.
+- Look for new features, deprecated functions, and changed defaults. Use the current recommended method, not an old pattern.
+- When the documentation and these instructions do not agree, follow the documentation and tell me.
+
 ## Languages
 
 - `~/.claude/rules/r.md` loads only after you read an R file. In a project with no R files yet, read it before you write R code.
