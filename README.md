@@ -1,22 +1,16 @@
 # agentsflow
 
 ```
-   you ──► request
-              │
-              ▼
-           change ◄───────┐
-              │           │
-              ▼           │
-   you ──► commit         │ fail
-              │           │
-              ▼           │
-           review ────────┘
-              │ pass
-              ▼
-        pull request
-              │
-              ▼
-   you ──► merge
+request
+   │
+   ▼
+change ◄──┐
+   │      │ fail
+   ▼      │
+review ───┘
+   │
+   ▼
+ merge
 ```
 
 ## In this repo
@@ -28,7 +22,7 @@ My rules override the installed tools when they conflict.
 - **[research-writing](skills/research-writing/SKILL.md)**: APA 7 and open-science rules.
 - **[viz](skills/viz/SKILL.md)**: rules for figures, charts, maps, and tables, and how to choose a tool (ggplot2, plotnine, plotly, D3, Leaflet with OpenStreetMap, gt). Reference files for R, Python, web, and maps.
 - **[audit-instructions](skills/audit-instructions/SKILL.md)**: checks these files for outdated claims, broken references, and conflicts, then opens a PR with fixes. Runs only when I type `/audit-instructions`.
-- **[rules/r.md](rules/r.md)**: R preferences that the R plugins miss or contradict. Loads only for R files.
+- **[rules/r.md](rules/r.md)**: R preferences that the R plugins miss or contradict, and an R project stack (renv, targets, Shiny, Quarto). Loads only for R files.
 - **[rules/python.md](rules/python.md)**: uv for Python, and a web app stack (FastAPI, PostgreSQL, SQLAlchemy, React) with separate layers. Loads only for Python and frontend files.
 
 ## Installed tools
