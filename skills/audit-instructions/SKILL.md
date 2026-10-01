@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Audit instructions
 
-Run this skill in the instructions repository (`~/.claude`). It finds instructions that are now outdated and fixes them in a pull request.
+This skill finds instructions that are now outdated and fixes them in a pull request. It needs a git clone of the instructions repository at `~/.claude`. If `git rev-parse` fails there, stop and tell me.
 
 ## 1. Find the files
 
@@ -43,5 +43,7 @@ Read each file. List each claim that can become outdated, with its `file:line`:
 ## 5. Report and fix
 
 - Report a table with these columns: `file:line`, claim, status, evidence, and fix. Put outdated claims and conflicts first.
-- Create a branch named `audit-<YYYY-MM-DD>`. Fix only the outdated claims and the conflicts. Keep the wording style of each file.
+- Create a branch named `audit-<YYYY-MM-DD>` from the latest `origin/main`. If the branch exists, add a suffix such as `-2`.
+- Fix only the outdated claims and the conflicts. Keep the wording style of each file.
+- Follow the git workflow in `CLAUDE.md` and `rules/roborev.md`: get my review before you commit, and handle failing reviews before the pull request.
 - Open a pull request that includes the table. Put the unsure claims in a separate list for my decision.
