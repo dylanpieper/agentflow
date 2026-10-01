@@ -14,6 +14,6 @@
 
 ## Data and access
 
-- Follow the layer rules in `rules/python.md`. The API sends the data in the shape that the chart uses. The frontend does not calculate statistics.
+- The API sends the data in the shape that the chart uses. The frontend does not calculate statistics. The layer rules are in `~/.claude/rules/python.md`.
 - Aggregate large data on the server, with DuckDB or PostgreSQL. Do not send raw rows that the reader cannot see.
 - Give each SVG a `<title>` and a `role="img"` with an `aria-label`. Give an interactive figure keyboard access and a data table as an alternative.

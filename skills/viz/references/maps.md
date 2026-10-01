@@ -4,7 +4,8 @@
 
 - For interactive maps, use Leaflet: the `leaflet` package in R, `folium` in Python, and `react-leaflet` in React.
 - For geodata, use `sf` in R and `geopandas` in Python.
-- To get OpenStreetMap data, use `osmdata` in R or `osmnx` in Python. For large extracts, use the `duckdb-skills:spatial` skill with Overture Maps.
+- To get OpenStreetMap data, use `osmdata` in R or `osmnx` in Python.
+- For large extracts, use Overture Maps with the `duckdb-skills:spatial` skill. Overture is a different dataset from OpenStreetMap. Each Overture theme has its own license, so show the attribution that the theme requires.
 
 ## OpenStreetMap tiles and services
 

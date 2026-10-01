@@ -18,6 +18,7 @@ The r-skills plugin covers general style, tidyverse, rlang, and package developm
 - In scripts, call functions from loaded packages directly. Use `pkg::fn()` only for one or two calls, for a name conflict, or in package code.
 - For complex projects, these packages can help: `renv`, `config`, `here`, `pins`, `box`, `targets`, `logger`, and `profvis`.
 - `box::use()` keeps a module in cache until the R session stops. After you change a module file, restart R or call `box::reload()`. Then do the tests.
+- For figures, maps, and tables, use the viz skill.
 
 ## Package Development
 
@@ -25,7 +26,3 @@ The r-skills plugin covers general style, tidyverse, rlang, and package developm
 - Use `rlang::check_installed()` for suggested dependencies.
 - Use `@importFrom` only for operators (for example, `%||%`), frequent calls, and tight loops. Use `@import` only when necessary.
 - Use `pkgdown` with `light-switch` set to `true`.
-
-## Figures and tables
-
-- For figures, maps, and tables, use the viz skill. Its `references/r.md` file has the ggplot2 and gt rules.

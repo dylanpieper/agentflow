@@ -20,9 +20,9 @@ These rules follow [Beyond Bar and Box Plots](https://z3tt.github.io/beyond-bar-
 | Need | R | Python | Web (React) |
 |------|---|--------|-------------|
 | Static figure | ggplot2 | plotnine, or seaborn and matplotlib | Not applicable |
-| Standard interactive chart | plotly | plotly | plotly.js |
+| Standard interactive chart | plotly | plotly | react-plotly.js |
 | Custom interactive graphic | Not applicable | Not applicable | D3 |
-| Interactive map | leaflet | folium | Leaflet |
+| Interactive map | leaflet | folium | react-leaflet |
 | Table | gt | great_tables | Not applicable |
 
 - Start with a static figure. Make a figure interactive only when the reader needs hover, zoom, or filter, and the output is HTML (Quarto HTML, Shiny, or a web app).
