@@ -61,4 +61,5 @@
 ## Languages
 
 - `~/.claude/rules/r.md` loads only after you read an R file. In a project with no R files yet, read it before you write R code.
+- `~/.claude/rules/python.md` loads only after you read a Python or frontend file. In a new project, read it before you write Python or frontend code.
 - I know R better than Python. In Python, use the Python equivalents of my R preferences. Use a functional style.
