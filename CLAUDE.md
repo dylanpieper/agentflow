@@ -60,10 +60,10 @@
 
 ## Libraries and tools
 
-- Before you use a package, library, or tool, read its current documentation and its change log (`NEWS.md`, `CHANGELOG.md`, or the release notes). Do not rely on memory for functions, arguments, or defaults.
-- Find the version that the project uses (`renv.lock`, `uv.lock`, `package-lock.json`, or `DESCRIPTION`). Read the documentation for that version.
+- Before you use a third-party package, library, or CLI, read its current documentation and its change log (`NEWS.md`, `CHANGELOG.md`, or the release notes). Do this one time each session for each tool. Do not rely on memory for functions, arguments, or defaults. Core shell tools and the standard library are not included.
+- Find the version that the project uses in its lockfile or manifest (for example, `renv.lock`, `DESCRIPTION`, `uv.lock`, `pyproject.toml`, or `package-lock.json`). If there is none, use the installed version (`--version`, `packageVersion()`, or `importlib.metadata.version()`). Read the documentation for that version.
 - Look for new features, deprecated functions, and changed defaults. Use the current recommended method, not an old pattern.
-- When the documentation and these instructions do not agree, follow the documentation and tell me.
+- When the documentation shows that a statement about a tool in these instructions is out of date, follow the documentation and tell me. My workflow and stack choices still apply.
 
 ## Languages
 
