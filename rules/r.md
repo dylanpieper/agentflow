@@ -37,7 +37,7 @@ For a complex project, use these tools:
 | UI and server | `shiny` with `bslib`, `shinyreact` |
 | Reports | Quarto |
 
-- For a UI and server, use `shiny` with `bslib` for dashboards and fast prototypes. Use [`shinyreact`](https://posit-dev.github.io/shinyreact/) when the UI needs custom React components or client-side interaction without a server round trip.
+- For a UI and server, use `shiny` with `bslib` for dashboards and fast prototypes. Use [`shinyreact`](https://posit-dev.github.io/shinyreact/) when the UI needs custom React components or client-side interaction without a server round trip. `shinyreact` is pre-release.
 - In a `shinyreact` app, the server sends only data with `reactive_output()`. React renders all of the UI from `ui.tsx`, and `page_react()` serves it. Do not build UI in the server.
 - For reports, use Quarto. For a PDF, use `format: typst`, not `format: pdf` (LaTeX). Use LaTeX only when a required template needs it.
 - Put the logic in functions in `R/`. Scripts and the pipeline only call these functions.

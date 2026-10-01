@@ -16,10 +16,10 @@ A project `CLAUDE.md` or `AGENTS.md` overrides this file.
 
 ## Web app stack
 
-When you build a web app with an API and a UI, use this stack. For a Shiny or shinyreact app with an R server, use `~/.claude/rules/r.md` instead of this section and the layer rules below. For the app database, this stack overrides the data stack in the global `~/.claude/CLAUDE.md`. For analytical or file-based work, including work inside the app, use that data stack.
+When you build a web app with an API and a UI, use this stack. For a Shiny or shinyreact app with an R server, use `~/.claude/rules/r.md` instead. For the app database, this stack overrides the data stack in the global `~/.claude/CLAUDE.md`. For analytical or file-based work, including work inside the app, use that data stack.
 
 - Use FastAPI for the API and Pydantic for request and response schemas.
-- Use PostgreSQL for the database. Use SQLAlchemy with typed `select()` queries, and Alembic for migrations.
+- Use PostgreSQL for the database. Use SQLAlchemy 2.0 with typed `select()` queries, and Alembic for migrations.
 - Use React for the frontend and Node for the frontend tooling.
 
 ## Layer separation
