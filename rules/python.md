@@ -14,7 +14,7 @@ paths:
 
 ## Web app stack
 
-When you build a web app with an API and a UI, use this stack. It overrides the data stack in `CLAUDE.md`. For other data work, use that data stack.
+When you build a web app with an API and a UI, use this stack. For the app database, it overrides the data stack in `CLAUDE.md`. For analytical or file-based work, also inside the app, use that data stack.
 
 - Use FastAPI for the API and Pydantic for request and response schemas.
 - Use PostgreSQL for the database. Use SQLAlchemy 2.0 with typed `select()` queries, and Alembic for migrations.
@@ -33,6 +33,6 @@ In a web app, keep each layer distinct. A layer calls only the layer below it. N
 | Models and migrations | SQLAlchemy tables and Alembic history | Contain logic |
 
 - Pydantic schemas are the shared API contract. Routes and services can import them. Keep them separate from SQLAlchemy models, and map between the two in the service layer.
-- A service gets its repository as an argument. Only the dependency providers in `api/deps.py` build repositories, sessions, and settings for FastAPI `Depends`. Route handlers call services only. Do not use global sessions.
+- A service gets its repository as an argument. The one exception to the layer order: dependency providers in `api/deps.py` build repositories, sessions, and settings. Route handlers get them with FastAPI `Depends` and give them to services. Handlers do not call repository methods. Do not use global sessions.
 - Use this layout: `backend/app/{api,services,repositories,models,schemas}/` and `frontend/`.
 - Test each layer alone. Test services with a fake repository. Test repositories against a real PostgreSQL test database.
