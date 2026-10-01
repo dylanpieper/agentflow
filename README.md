@@ -27,6 +27,7 @@ My rules override the installed tools when they conflict.
 - **[rules/roborev.md](rules/roborev.md)**: how Claude uses roborev when I ask in plain words for a review or fix.
 - **[research-writing](skills/research-writing/SKILL.md)**: APA 7 and open-science rules.
 - **[rules/r.md](rules/r.md)**: R preferences that the R plugins miss or contradict, and figure rules. Loads only for R files.
+- **[rules/python.md](rules/python.md)**: uv for Python, and a web app stack (FastAPI, PostgreSQL, SQLAlchemy, React) with separate layers. Loads only for Python and frontend files.
 
 ## Installed tools
 
@@ -62,6 +63,7 @@ base=https://raw.githubusercontent.com/dylanpieper/agentsflow/main
 mkdir -p ~/.claude/rules ~/.claude/skills/research-writing
 curl -fsSL $base/CLAUDE.md -o ~/.claude/CLAUDE.md
 curl -fsSL $base/rules/r.md -o ~/.claude/rules/r.md
+curl -fsSL $base/rules/python.md -o ~/.claude/rules/python.md
 curl -fsSL $base/rules/roborev.md -o ~/.claude/rules/roborev.md
 curl -fsSL $base/skills/research-writing/SKILL.md -o ~/.claude/skills/research-writing/SKILL.md
 ```

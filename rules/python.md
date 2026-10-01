@@ -8,16 +8,21 @@ paths:
 
 # Python and web stack
 
-## Stack
+## Python
 
 - Use `uv` for Python versions, environments, dependencies, and scripts (`uv add`, `uv run`). Do not use `pip`, `poetry`, or `conda`.
+
+## Web app stack
+
+When you build a web app with an API and a UI, use this stack. For other data work, use the data stack in `CLAUDE.md`.
+
 - Use FastAPI for the API and Pydantic for request and response schemas.
 - Use PostgreSQL for the database. Use SQLAlchemy 2.0 with typed `select()` queries, and Alembic for migrations.
 - Use React for the frontend and Node for the frontend tooling.
 
 ## Layer separation
 
-Keep each layer distinct. A layer calls only the layer below it. Never import from a layer above.
+In a web app, keep each layer distinct. A layer calls only the layer below it. Never import from a layer above.
 
 | Layer | Owns | Must not |
 |-------|------|----------|
@@ -27,7 +32,7 @@ Keep each layer distinct. A layer calls only the layer below it. Never import fr
 | Repositories | All SQLAlchemy queries | Contain business rules |
 | Models and migrations | SQLAlchemy tables and Alembic history | Contain logic |
 
-- Keep Pydantic schemas (the API contract) separate from SQLAlchemy models (the storage). Map between them in the service layer.
-- Give sessions and settings to routes with FastAPI `Depends`. Do not use global sessions.
+- Pydantic schemas are the shared API contract. Routes and services can import them. Keep them separate from SQLAlchemy models, and map between the two in the service layer.
+- A service gets its repository as an argument. Routes supply the repository, session, and settings with FastAPI `Depends`. Do not use global sessions.
 - Use this layout: `backend/app/{api,services,repositories,models,schemas}/` and `frontend/`.
 - Test each layer alone. Test services with a fake repository. Test repositories against a real PostgreSQL test database.
