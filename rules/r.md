@@ -34,7 +34,7 @@ For a complex project, use these tools:
 | Data versions | `pins` |
 | Modules and pipeline | `box`, `targets` |
 | Logs and profiling | `logger`, `profvis` |
-| UI and server | `shiny`, `shinyreact` |
+| UI and server | `shiny` with `bslib`, `shinyreact` |
 | Reports | Quarto |
 
 - For a UI and server, use `shiny` with `bslib` for dashboards and fast prototypes. Use [`shinyreact`](https://posit-dev.github.io/shinyreact/) when the UI needs custom React components or client-side interaction without a server round trip. `shinyreact` is pre-release.
